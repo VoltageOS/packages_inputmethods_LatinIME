@@ -73,6 +73,7 @@ public class SettingsValues {
     public final boolean mIncludesOtherImesInLanguageSwitchList;
     public final boolean mShowsLanguageSwitchKey;
     public final boolean mShowsEmojiKey;
+    public final boolean mShowsPasteButton;
     public final boolean mUseContactsDict;
     public final boolean mUsePersonalizedDicts;
     public final boolean mUseDoubleSpacePeriod;
@@ -156,6 +157,8 @@ public class SettingsValues {
         mShowsLanguageSwitchKey = Settings.ENABLE_SHOW_LANGUAGE_SWITCH_KEY_SETTINGS
                 ? Settings.readShowsLanguageSwitchKey(prefs) : true /* forcibly */;
         mShowsEmojiKey = prefs.getBoolean(Settings.PREF_SHOW_EMOJI_KEY, false);
+        mShowsPasteButton = prefs.getBoolean(Settings.PREF_SHOW_PASTE_BUTTON,
+                res.getBoolean(R.bool.config_default_show_paste_button));
         mUseContactsDict = prefs.getBoolean(Settings.PREF_KEY_USE_CONTACTS_DICT, true);
         mUsePersonalizedDicts = prefs.getBoolean(Settings.PREF_KEY_USE_PERSONALIZED_DICTS, false);
         mUseDoubleSpacePeriod = prefs.getBoolean(Settings.PREF_KEY_USE_DOUBLE_SPACE_PERIOD, true)
@@ -409,6 +412,8 @@ public class SettingsValues {
         sb.append("" + mIncludesOtherImesInLanguageSwitchList);
         sb.append("\n   mShowsLanguageSwitchKey = ");
         sb.append("" + mShowsLanguageSwitchKey);
+        sb.append("\n   mShowsPasteButton = ");
+        sb.append("" + mShowsPasteButton);
         sb.append("\n   mUseContactsDict = ");
         sb.append("" + mUseContactsDict);
         sb.append("\n   mUsePersonalizedDicts = ");
